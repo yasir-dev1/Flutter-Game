@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,16 +26,16 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: usernameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Kullanıcı Adı',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.person),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   String username = usernameController.text;
@@ -47,7 +49,7 @@ class LoginPage extends StatelessWidget {
                     );
                   }
                 },
-                child: Text('Oyuna Başla'),
+                child: const Text('Oyuna Başla'),
               ),
             ],
           ),

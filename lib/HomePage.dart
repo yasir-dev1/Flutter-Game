@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 class HomePage extends StatelessWidget {
   GameController controller = Get.find();
   final Name;
-  HomePage({required this.Name});
+  HomePage({super.key, required this.Name});
   RxInt level = 0.obs;
   RxString elapsedTime = "".obs; // Add this line for elapsed time
   Map<String, String> Images = {
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Stopwatch stopwatch = Stopwatch()..start();
 
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       elapsedTime.value = stopwatch.elapsed.inSeconds.toString(); // Update elapsed time
     });
 
@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
                 )),
           ],
         ),
-        leading: Text(""),
+        leading: const Text(""),
       ),
       body: Center(
         child: Column(
@@ -88,8 +88,8 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               width: 90 * 2,
                               height: 90 * 2,
-                              child: Image.asset(
-                                  Images.keys.toList()[index + level.value]),
+                              child: Image.network("https://fotograf-eslestirme-oyunu.web.app/assets/assets/${Images.keys.toList()[index + level.value]}"
+                                  ),
                             ),
                             Container(width: 40)
                           ]),
@@ -130,7 +130,7 @@ class HomePage extends StatelessWidget {
                       Get.to(FinishPage(Name: Name,time: time,));
                 }
               },
-              child: Text("Bir Sonraki Seviye"),
+              child: const Text("Bir Sonraki Seviye"),
             )
           ],
         ),

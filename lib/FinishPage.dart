@@ -8,7 +8,7 @@ class FinishPage extends StatelessWidget {
     String Name="";
     String time = "";
 
-        FinishPage({required this.Name , required this.time});
+        FinishPage({super.key, required this.Name , required this.time});
     
   @override
   Widget build(BuildContext context) {
@@ -28,16 +28,16 @@ class FinishPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Tebrikler!"),
-              SizedBox(height: 16,),
-              Text("Oyunu $time Saniyede Bitirdin"),
-              SizedBox(height: 16,),
+              const Text("Tebrikler!"),
+              const SizedBox(height: 16,),
+              Text("Oyunu $time Saniyede Bitirdiniz"),
+              const SizedBox(height: 16,),
               ElevatedButton(
                 onPressed: () {
                   controller.showList.fillRange(0, controller.showList.length,false);
                     Get.to(HomePage(Name: Name,));
                   },
-                child: Text('Tekrar Oyna'),
+                child: const Text('Tekrar Oyna'),
               ),
             ],
           ),

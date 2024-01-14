@@ -17,7 +17,7 @@ class GameController extends GetxController {
             txt.value = data[1] ;
             color.value = data[2];}
           },
-            builder: (context,_,__) => Container(color: color.value,width: 90*2,height: 40*2,child: Center(child: Text(txt.value,style: TextStyle(fontSize: 16),),),))
+            builder: (context,_,__) => Container(color: color.value,width: 90*2,height: 40*2,child: Center(child: Text(txt.value,style: const TextStyle(fontSize: 16),),),))
             );
   }
   Widget buildDrag(text,number){
@@ -38,7 +38,7 @@ class GameController extends GetxController {
       opacity: !showList[number] ? 1:0 ,
       child: Draggable<List>(
         data: [number,text,Colors.green],
-        childWhenDragging: Container(width: 120,height: 80,),
+        childWhenDragging: const SizedBox(width: 120,height: 80,),
         feedback: container,
         child: container ,
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttergame/Controller.dart';
-import 'package:fluttergame/HomePage.dart';
 import 'package:fluttergame/LoginPage.dart';
 import 'package:get/get.dart';
 
