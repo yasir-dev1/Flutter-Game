@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergame/BoardPage.dart';
 import 'package:fluttergame/Controller.dart';
 import 'package:fluttergame/HomePage.dart';
+import 'package:fluttergame/LoginPage.dart';
 import 'package:get/get.dart';
 
 class FinishPage extends StatelessWidget {
     GameController controller = Get.find();
     String Name="";
-    String time = "";
+    int time = 0;
 
         FinishPage({super.key, required this.Name , required this.time});
     
@@ -35,9 +37,18 @@ class FinishPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   controller.showList.fillRange(0, controller.showList.length,false);
-                    Get.to(HomePage(Name: Name,));
+                    Get.to(LoginPage());
+                    
                   },
                 child: const Text('Tekrar Oyna'),
+      
+              ),
+              SizedBox(height: 16,),
+              ElevatedButton(
+                onPressed: () {
+                    Get.to(BoardPage());
+                  },
+                child: const Text('Lider Tablosu '), 
               ),
             ],
           ),

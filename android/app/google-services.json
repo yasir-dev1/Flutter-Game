@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "530439933486",
+    "project_id": "fotograf-eslestirme-oyunu",
+    "storage_bucket": "fotograf-eslestirme-oyunu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530439933486:android:4a8f13c5d444a04161d9bf",
+        "android_client_info": {
+          "package_name": "com.yasir.derbent.fluttergame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfY5kBI3zc7sEpEOpH8F5ookJgudjyYh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

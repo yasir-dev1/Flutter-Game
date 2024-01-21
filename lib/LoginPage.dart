@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergame/Controller.dart';
 import 'package:fluttergame/HomePage.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
+  GameController controller = Get.find();
   final TextEditingController usernameController = TextEditingController();
 
   LoginPage({super.key});

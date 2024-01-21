@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergame/BoardPage.dart';
 import 'package:fluttergame/Controller.dart';
 import 'package:fluttergame/LoginPage.dart';
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 
-void main() {
+
+Future<void> main() async {
+    await Firebase.initializeApp(
+
+    options: DefaultFirebaseOptions.currentPlatform,
+
+  );
   runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {

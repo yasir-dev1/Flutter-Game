@@ -125,9 +125,11 @@ class HomePage extends StatelessWidget {
                       0, controller.showList.length, false);
                 } else if (controller.showList.every(
                     (element) => element == true)) {
-                      String time = stopwatch.elapsed.inSeconds.toString();
+                      int time = stopwatch.elapsed.inSeconds;
                       stopwatch.stop();
                       Get.to(FinishPage(Name: Name,time: time,));
+                      controller.Finished(Name, time);
+                      
                 }
               },
               child: const Text("Bir Sonraki Seviye"),

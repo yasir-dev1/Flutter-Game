@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
 class GameController extends GetxController {
   RxList showList = [false,false,false,false].obs;
+
   Widget build (text){
     RxString txt = "".obs;
     Rx<MaterialColor> color = Colors.red.obs;
@@ -45,4 +47,27 @@ class GameController extends GetxController {
     ),
    ));
 }
+  Future<void> Finished (name,time) async {
+    try {
+    // Reference to the Firestore collection and document
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection('Users');
+
+    String documentId = DateTime.now().millisecondsSinceEpoch.toString();
+    print(documentId);
+    // Update the document with a new fiel
+
+    await collectionReference.doc(documentId).set({
+      "name": name,
+      "time":time,
+    });
+    print(time);
+
+    print('Field added successfully!');
+  } catch (e) {
+    print('Error adding field: $e');
+  }
+  }
+
 }
+
